@@ -1,0 +1,12 @@
+plex:
+  image: wernight/plex-media-server:autoupdate
+  ports:
+    - "32400:32400"
+  volumes:
+    - ~/config/plex:/config
+    - ~/media:/media
+  net: "host"
+  environment:
+    - PLEXPASS_LOGIN=<plexpass login name>
+    - PLEXPASS_PASSWORD=<plexpass password>
+  restart: always
