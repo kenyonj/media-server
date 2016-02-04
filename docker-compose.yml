@@ -78,7 +78,7 @@ couchpotato:
     - /etc/localtime:/etc/localtime:ro
 sabnzbd:
   env_file: .env
-  image: linuxserver/sabnzbd
+  image: needo/sabnzbd
   ports:
     - "8088:8080"
     - "9099:9090"
@@ -86,5 +86,4 @@ sabnzbd:
     - ~/config/sabnzbd:/config
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/downloads/sabnzbd/incomplete:/incomplete-downloads
-    - ~/media/movies:/movies
     - /etc/localtime:/etc/localtime:ro
