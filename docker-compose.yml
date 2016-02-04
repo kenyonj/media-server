@@ -76,3 +76,15 @@ couchpotato:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/media/movies:/movies
     - /etc/localtime:/etc/localtime:ro
+sabnzbd:
+  env_file: .env
+  image: linuxserver/sabnzbd
+  ports:
+    - "8088:8080"
+    - "9099:9090"
+  volumes:
+    - ~/config/sabnzbd:/config
+    - ~/downloads/sabnzbd/complete:/downloads
+    - ~/downloads/sabnzbd/incomplete:/incomplete-downloads
+    - ~/media/movies:/movies
+    - /etc/localtime:/etc/localtime:ro
