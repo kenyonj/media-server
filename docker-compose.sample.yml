@@ -2,3 +2,7 @@ plex:
   environment:
     - PLEXPASS_LOGIN=<plexpass login name>
     - PLEXPASS_PASSWORD=<plexpass password>
+plexpy:
+  environment:
+    - PGID=<group id of the user starting the container>
+    - PUID=<user id of the user starting the container>

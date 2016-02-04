@@ -7,3 +7,11 @@ plex:
     - ~/media:/media
   net: "host"
   restart: always
+plexpy:
+  image: linuxserver/plexpy
+  ports:
+    - "8181:8181"
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ~/config/plexpy:/config
+    - ~/config/plex/Plex\ Media\ Server/Logs:/logs:ro
