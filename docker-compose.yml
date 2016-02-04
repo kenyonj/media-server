@@ -48,3 +48,11 @@ requests:
   volumes:
     - /etc/localtime:/etc/localtime:ro
     - ~/config/requests:/config:rw
+deluge:
+  env_file: .env
+  image: linuxserver/deluge
+  net: host
+  volumes:
+    - ~/downloads/sabnzbd/complete:/downloads
+    - ~/config/deluge:/config
+    - /etc/localtime:/etc/localtime:ro
