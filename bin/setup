@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Exit if any subcommand fails
+set -e
+
+if [ ! -f docker-compose.override.yml ]; then
+  cp docker-compose.sample.yml docker-compose.override.yml
+fi

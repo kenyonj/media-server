@@ -1,0 +1,4 @@
+plex:
+  environment:
+    - PLEXPASS_LOGIN=<plexpass login name>
+    - PLEXPASS_PASSWORD=<plexpass password>

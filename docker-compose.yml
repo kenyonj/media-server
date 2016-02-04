@@ -6,7 +6,4 @@ plex:
     - ~/config/plex:/config
     - ~/media:/media
   net: "host"
-  environment:
-    - PLEXPASS_LOGIN=<plexpass login name>
-    - PLEXPASS_PASSWORD=<plexpass password>
   restart: always
