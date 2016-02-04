@@ -28,3 +28,13 @@ sonarr:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/config/couchpotato/blackhole:/blackhole
     - ~/media/tv:/tv
+pydio:
+  env_file: .env
+  image: linuxserver/pydio
+  ports:
+    - "443:443"
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ~/config/pydio:/config
+    - ~/data/pydio:/data
+    - /home:/host-home
