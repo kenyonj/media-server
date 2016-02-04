@@ -38,3 +38,13 @@ pydio:
     - ~/config/pydio:/config
     - ~/data/pydio:/data
     - /home:/host-home
+requests:
+  env_file: .env
+  environment:
+    - BRANCH=master
+  image: aptalca/docker-plexrequests
+  ports:
+    - "3000:3000"
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ~/config/requests:/config:rw
