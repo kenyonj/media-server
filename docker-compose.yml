@@ -1,4 +1,5 @@
 plex:
+  env_file: .env
   image: wernight/plex-media-server:autoupdate
   ports:
     - "32400:32400"
@@ -8,6 +9,7 @@ plex:
   net: "host"
   restart: always
 plexpy:
+  env_file: .env
   image: linuxserver/plexpy
   ports:
     - "8181:8181"
@@ -15,3 +17,14 @@ plexpy:
     - /etc/localtime:/etc/localtime:ro
     - ~/config/plexpy:/config
     - ~/config/plex/Plex\ Media\ Server/Logs:/logs:ro
+sonarr:
+  env_file: .env
+  image: linuxserver/sonarr
+  ports:
+    - "8989:8989"
+  volumes:
+    - /dev/rtc:/dev/rtc:ro
+    - ~/config/sonarr:/config
+    - ~/downloads/sabnzbd/complete:/downloads
+    - ~/config/couchpotato/blackhole:/blackhole
+    - ~/media/tv:/tv
