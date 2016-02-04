@@ -66,3 +66,13 @@ headphones:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/media/music:/music
     - /etc/localtime:/etc/localtime:ro
+couchpotato:
+  env_file: .env
+  image: linuxserver/couchpotato
+  ports:
+    - "5050:5050"
+  volumes:
+    - ~/config/couchpotato:/config
+    - ~/downloads/sabnzbd/complete:/downloads
+    - ~/media/movies:/movies
+    - /etc/localtime:/etc/localtime:ro
