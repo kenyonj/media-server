@@ -56,3 +56,13 @@ deluge:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/config/deluge:/config
     - /etc/localtime:/etc/localtime:ro
+headphones:
+  env_file: .env
+  image: linuxserver/headphones
+  ports:
+    - "8282:8181"
+  volumes:
+    - ~/config/headphones:/config
+    - ~/downloads/sabnzbd/complete:/downloads
+    - ~/media/music:/music
+    - /etc/localtime:/etc/localtime:ro
