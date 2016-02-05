@@ -8,6 +8,7 @@ plex:
     - ~/media:/media
   net: "host"
   restart: always
+
 plexpy:
   env_file: .env
   image: linuxserver/plexpy
@@ -17,6 +18,8 @@ plexpy:
     - /etc/localtime:/etc/localtime:ro
     - ~/config/plexpy:/config
     - ~/config/plex/Plex\ Media\ Server/Logs:/logs:ro
+  restart: always
+
 sonarr:
   env_file: .env
   image: linuxserver/sonarr
@@ -28,6 +31,8 @@ sonarr:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/config/couchpotato/blackhole:/blackhole
     - ~/media/tv:/tv
+  restart: always
+
 pydio:
   env_file: .env
   image: linuxserver/pydio
@@ -38,6 +43,8 @@ pydio:
     - ~/config/pydio:/config
     - ~/data/pydio:/data
     - /home:/host-home
+  restart: always
+
 requests:
   env_file: .env
   environment:
@@ -48,6 +55,8 @@ requests:
   volumes:
     - /etc/localtime:/etc/localtime:ro
     - ~/config/requests:/config:rw
+  restart: always
+
 deluge:
   env_file: .env
   image: linuxserver/deluge
@@ -56,6 +65,8 @@ deluge:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/config/deluge:/config
     - /etc/localtime:/etc/localtime:ro
+  restart: always
+
 headphones:
   env_file: .env
   image: linuxserver/headphones
@@ -66,6 +77,8 @@ headphones:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/media/music:/music
     - /etc/localtime:/etc/localtime:ro
+  restart: always
+
 couchpotato:
   env_file: .env
   image: linuxserver/couchpotato
@@ -76,6 +89,8 @@ couchpotato:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/media/movies:/movies
     - /etc/localtime:/etc/localtime:ro
+  restart: always
+
 sabnzbd:
   env_file: .env
   image: needo/sabnzbd
@@ -87,3 +102,4 @@ sabnzbd:
     - ~/downloads/sabnzbd/complete:/downloads
     - ~/downloads/sabnzbd/incomplete:/incomplete-downloads
     - /etc/localtime:/etc/localtime:ro
+  restart: always
